@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration status="WARN" monitorinterval="20">
+    <Properties>
+        <Property name="log.dir">logs</Property>
+    </Properties>
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %c{1.} %M %X{requestId} - %msg%n%xEx{full}"/>
+        </Console>
+
+        <RollingFile name="Logs" fileName="${sys:log.dir}/code.log"
+                     filePattern="${sys:log.dir}/think123-api.log.%d{yyyyMMdd}.%i.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %c{1.} %M %X{requestId} - %msg%n%xEx{full}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="200 MB"/>
+                <TimeBasedTriggeringPolicy modulate="true" interval="1"/>
+            </Policies>
+            <DefaultRolloverStrategy max="50"/>
+        </RollingFile>
+
+        <RollingFile name="Error" fileName="${sys:log.dir}/code-error.log"
+                     filePattern="${sys:log.dir}/think123-error.log.%d{yyyyMMdd}.%i.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %c{1.} %M %X{requestId} - %msg%n%xEx{full}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="200 MB"/>
+                <TimeBasedTriggeringPolicy modulate="true" interval="1"/>
+            </Policies>
+            <DefaultRolloverStrategy max="50"/>
+        </RollingFile>
+
+        <EsAppender>
+            <name>LogAppender</name>
+            <esHost>localhost</esHost>
+            <port>9200</port>
+            <indexName>api_log</indexName>
+            <projectName>think123-code</projectName>
+            <projectType>beta</projectType>
+        </EsAppender>
+
+    </appenders>
+    <loggers>
+        <root level="DEBUG">
+            <appender-ref ref="Console" level="INFO"/>
+            <appender-ref ref="Logs" level="INFO"/>
+            <appender-ref ref="Error" level="ERROR"/>
+        </root>
+
+        <logger name="com.think123.code.log" level="DEBUG" additivity="false">
+            <appender-ref ref="Console" level="DEBUG"/>
+            <appender-ref ref="Logs" level="DEBUG"/>
+            <appender-ref ref="Error" level="ERROR"/>
+            <appender-ref ref="LogAppender" level="info"/>
+        </logger>
+    </loggers>
+</configuration>
