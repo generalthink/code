@@ -1,0 +1,37 @@
+2021-04-09 13:39:15.276 INFO  c.t.c.CodeApplication logStarting  - Starting CodeApplication using Java 1.8.0_172 on CN17703-D-1 with PID 257204 (E:\code_workspace\code\target\classes started by admin in E:\code_workspace\code)
+2021-04-09 13:39:15.317 INFO  c.t.c.CodeApplication logStartupProfileInfo  - No active profile set, falling back to default profiles: default
+2021-04-09 13:39:16.118 INFO  o.s.b.w.e.t.TomcatWebServer initialize  - Tomcat initialized with port(s): 8080 (http)
+2021-04-09 13:39:16.139 INFO  o.a.c.h.Http11NioProtocol log  - Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-09 13:39:16.140 INFO  o.a.c.c.StandardService log  - Starting service [Tomcat]
+2021-04-09 13:39:16.140 INFO  o.a.c.c.StandardEngine log  - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-09 13:39:16.142 INFO  o.a.c.c.AprLifecycleListener log  - An older version [1.2.17] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2021-04-09 13:39:16.143 INFO  o.a.c.c.AprLifecycleListener log  - Loaded Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2021-04-09 13:39:16.143 INFO  o.a.c.c.AprLifecycleListener log  - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-04-09 13:39:16.143 INFO  o.a.c.c.AprLifecycleListener log  - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-04-09 13:39:17.262 INFO  o.a.c.c.AprLifecycleListener log  - OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2021-04-09 13:39:17.365 INFO  o.a.c.c.C.[.[.[/] log  - Initializing Spring embedded WebApplicationContext
+2021-04-09 13:39:17.366 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext  - Root WebApplicationContext: initialization completed in 2006 ms
+2021-04-09 13:39:17.457 DEBUG c.t.c.l.LoggingFilter init  - Filter 'loggingFilter' configured for use
+2021-04-09 13:39:17.602 INFO  o.s.s.c.ThreadPoolTaskExecutor initialize  - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-09 13:39:18.265 INFO  o.a.c.h.Http11NioProtocol log  - Starting ProtocolHandler ["http-nio-8080"]
+2021-04-09 13:39:18.279 INFO  o.s.b.w.e.t.TomcatWebServer start  - Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-09 13:39:18.302 INFO  c.t.c.CodeApplication logStarted  - Started CodeApplication in 3.43 seconds (JVM running for 4.971)
+2021-04-09 13:39:53.731 INFO  o.a.c.c.C.[.[.[/] log  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-09 13:39:53.731 INFO  o.s.w.s.DispatcherServlet initServletBean  - Initializing Servlet 'dispatcherServlet'
+2021-04-09 13:39:53.733 INFO  o.s.w.s.DispatcherServlet initServletBean  - Completed initialization in 2 ms
+2021-04-09 13:39:53.797 INFO  c.t.c.l.RestHttpRequestInterceptor traceRequest eed2be13-dc61-4076-8d36-729e80dd844f - 
+=========================== request begin ===========================
+URI         : http://localhost:8080/api/users/1?age=21&school=qinghua
+Method      : GET
+Headers     : [Accept:"application/json, application/x-jackson-smile, application/cbor, application/*+json", Content-Length:"0", X_USER_REQ_ID:"eed2be13-dc61-4076-8d36-729e80dd844f"]
+Request body: 
+===========================  request end  ===========================
+2021-04-09 13:39:54.359 INFO  c.t.c.l.RestHttpRequestInterceptor traceResponse eed2be13-dc61-4076-8d36-729e80dd844f - 
+=========================== response begin ===========================
+Status code  : 200 OK
+Status text  : 
+Headers      : [requestId:"eed2be13-dc61-4076-8d36-729e80dd844f", Content-Type:"application/json", Content-Length:"65", Date:"Fri, 09 Apr 2021 05:39:54 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]
+Response body: {"school":"qinghua","name":"think123-aHk","userId":1,"age":"214"}
+===========================  response end  ===========================
+2021-04-09 13:39:54.395 INFO  c.t.c.l.LoggingFilter doFilterInternal eed2be13-dc61-4076-8d36-729e80dd844f - {"userNo":"","tenantId":"","responseTimeMs":30,"request":{"clientIp":"127.0.0.1","method":"GET","path":"/api/users/1","params":{"school":"qinghua","age":"21"},"headers":{"host":"localhost:8080","connection":"keep-alive","x_user_req_id":"eed2be13-dc61-4076-8d36-729e80dd844f","accept":"application/json, application/x-jackson-smile, application/cbor, application/*+json","user-agent":"Java/1.8.0_172"},"body":""},"response":{"status":200,"headers":{"Keep-Alive":"timeout=60","Connection":"keep-alive","Content-Length":"65","requestId":"eed2be13-dc61-4076-8d36-729e80dd844f","Date":"Fri, 09 Apr 2021 05:39:54 GMT","Content-Type":"application/json"},"body":"{\"school\":\"qinghua\",\"name\":\"think123-aHk\",\"userId\":1,\"age\":\"214\"}"}}
+2021-04-09 13:39:54.455 INFO  c.t.c.l.LoggingFilter doFilterInternal eed2be13-dc61-4076-8d36-729e80dd844f - {"userNo":"","tenantId":"","responseTimeMs":710,"request":{"clientIp":"0:0:0:0:0:0:0:1","method":"GET","path":"/api/search","params":{"school":"qinghua","age":"21"},"headers":{"host":"localhost:8080","cache-control":"no-cache","more":"1","postman-token":"a4240ae5-b0c1-4873-ba74-7fe2bdf98792"},"body":""},"response":{"status":200,"headers":{"Content-Length":"65","requestId":"eed2be13-dc61-4076-8d36-729e80dd844f","Date":"Fri, 09 Apr 2021 05:39:54 GMT","Content-Type":"application/json"},"body":"{\"school\":\"qinghua\",\"name\":\"think123-aHk\",\"userId\":1,\"age\":\"214\"}"}}
